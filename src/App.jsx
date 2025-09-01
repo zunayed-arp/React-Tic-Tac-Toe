@@ -1,5 +1,9 @@
-import Square from "./components/Square";
+import Board from "./components/Board";
 
 export default function App() {
-  return <Square />;
+  return (
+    <>
+      <Board />
+    </>
+  );
 }
