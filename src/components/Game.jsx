@@ -17,11 +17,11 @@ export default function Game() {
   }
 
   return (
-    <div>
-      <div>
+    <div className="flex justify-center">
+      <div className="mr-10 ml-10 mt-10 ">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
-      <div>
+      <div className="mt-10">
         <History
           history={history}
           setCurrentMove={setCurrentMove}

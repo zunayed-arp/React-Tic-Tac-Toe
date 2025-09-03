@@ -8,7 +8,9 @@ export default function History({ history, setCurrentMove, setXIsNext }) {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button className="mb-2" onClick={() => jumpTo(move)}>
+          {description}
+        </button>
       </li>
     );
   });
@@ -19,7 +21,7 @@ export default function History({ history, setCurrentMove, setXIsNext }) {
   }
   return (
     <>
-      <ol>{moves}</ol>
+      <ol className="">{moves}</ol>
     </>
   );
 }
