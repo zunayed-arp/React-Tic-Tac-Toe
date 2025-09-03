@@ -1,11 +1,7 @@
-import { useState } from "react";
 import calculateWinner from "../controller/calculateWinner";
 import Square from "./Square";
 
-export default function Board() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
-
+export default function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
 
@@ -20,14 +16,15 @@ export default function Board() {
       return;
     }
     const nextSquares = squares.slice();
-    console.log(` array slice ${nextSquares}`);
-    if (xIsNext === true) {
+
+    console.log(`next squares in handle click ${nextSquares}`);
+
+    if (xIsNext) {
       nextSquares[i] = "X";
     } else {
       nextSquares[i] = "O";
     }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   }
 
   return (
