@@ -7,10 +7,8 @@ export default function History({ history, setCurrentMove, setXIsNext }) {
       description = `Start the Game`;
     }
     return (
-      <li key={move}>
-        <button className="mb-2" onClick={() => jumpTo(move)}>
-          {description}
-        </button>
+      <li className="bg-gray-700 text-white mb-1 p-1 rounded-sm" key={move}>
+        <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
@@ -21,7 +19,7 @@ export default function History({ history, setCurrentMove, setXIsNext }) {
   }
   return (
     <>
-      <ol className="">{moves}</ol>
+      <ol className="border border-gray-400 p-4">{moves}</ol>
     </>
   );
 }
